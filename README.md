@@ -11,19 +11,20 @@ vagrant up
 
 ## libcgroup-0.40.rc1-5.el6_5.1.x86_64
 
-libcgroup-0.40.rc1-5.el6_5.1.x86_64 seems to have bug if `cgrules.conf` and `cgrules.conf` use ___tempalte___ notation.
+libcgroup-0.40.rc1-5.el6_5.1.x86_64 seems to have bug if `cgrules.conf` and `cgrules.conf` use ___template___ notation.
 
 ### How to reproduce bug
 
 ```sh
-vagrant provision
+$ vagrant up
+$ vagrant provision
 ```
 
 Serverspec of cgroup fails.
 
 ```
 $ bundle exec rake spec
-/Users/hiroya/.rbenv/versions/2.1.0/bin/ruby -S rspec spec/default/cgroup_root_spec.rb spec/default/cgroup_vagrant_spec.rb
+
 ....F.F.F.F.F
 
 Failures:
