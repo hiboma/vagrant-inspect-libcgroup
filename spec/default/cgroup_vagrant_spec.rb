@@ -16,7 +16,7 @@ describe "/cgroup/*/vagrant/vagrant - vagrant に制限が課されているか�
     its(:content) { should match /50000/ }
   end
 
-  describe file('/cgroup/memory/vagrant/memory.memsw.limit_in_bytes') do
+  describe file('/cgroup/memory/vagrant/memory.limit_in_bytes') do
     it { should be_file }
     its(:content) { should match /104857600/ }
   end
